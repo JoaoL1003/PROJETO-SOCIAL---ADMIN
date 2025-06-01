@@ -1,0 +1,144 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="design.css">
+        <link rel="icon" href="IMGS/LOGO ESTANTE (V).png">
+        <title>Estante Viva - Aba Devoluções</title>
+
+        <!--Maitree-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!--Kanit-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+    <body>
+        
+            <!-- BARRA DE NAVEGAÇÃO LATERAL -->
+    <div class="barra_lateral">
+        
+        <!-- Logo centralizada -->
+        <div class="logo-container">
+            <img src="IMGS/Estrutura/LOGO ESTANTE (B).png" alt="Logo" class="logo">
+        </div>
+
+        <!-- Lista de itens do menu -->
+        <ul>
+            <li class="list active">
+                <a href="../Pagina inicial - Alunos/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/01-Alunos.png" class="menu-icon" data-hover="IMGS/Icons/01-AlunosHover.png" data-default="IMGS/Icons/01-Alunos.png">
+                    </span>
+                    <span class="title">Alunos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Emprestimos/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/02-Emprestimos.png" class="menu-icon" data-hover="IMGS/Icons/02-EmprestimosHover.png" data-default="IMGS/Icons/02-Emprestimos.png">
+                    </span>
+                    <span class="title">Empréstimos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/03-Devoluções.png" class="menu-icon" data-hover="IMGS/Icons/03-DevoluçõesHover.png" data-default="IMGS/Icons/03-Devoluções.png">
+                    </span>
+                    <span class="title">Devoluções</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Acervo/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/04-Acervo.png" class="menu-icon" data-hover="IMGS/Icons/04-AcervoHover.png" data-default="IMGS/Icons/04-Acervo.png">
+                    </span>
+                    <span class="title">Acervo</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Cadastro/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/05-Cadastro.png" class="menu-icon" data-hover="IMGS/Icons/05-CadastroHover.png" data-default="IMGS/Icons/05-Cadastro.png">
+                    </span>
+                    <span class="title">Cadastro</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <img src="IMGS/Icons/06-AdminSite.png" class="menu-icon" data-hover="IMGS/Icons/06-AdminSiteHover.png" data-default="IMGS/Icons/06-AdminSite.png">
+                    </span>
+                    <span class="title">Site Alunos</span>
+                </a>
+            </li>
+        </ul>
+    </div> 
+
+        <!--Sessão Principal-->
+    <section class="conteudo_principal">
+        <h1 class="title-main-page">Devoluções</h1>
+
+        <div class="filtros-de-busca">
+            <div class="filtros-de-busca">
+                <div class="barra-de-pesquisa">
+                    <img class="input-icon" src="IMGS/lupa.png" alt="pesquisa-icon">
+                    <input type="text" id="filtro" placeholder="Pesquisar" oninput="filtrarAlunos()">
+                </div>
+                
+                <div class="filtro-turma">
+                    <select id="filtroCurso" onchange="filtrarAlunos()">
+                        <option value="">TURMAS</option>
+                        <option value="INFORMÁTICA">INFORMÁTICA</option>
+                        <option value="ENFERMAGEM">ENFERMAGEM</option>
+                        <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                        <option value="FINANÇAS">FINANÇAS</option>
+                        <option value="ESTÉTICA">ESTÉTICA</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabela-container">
+        <table id="tabela-devoluções">
+            <thead>
+                <tr>
+                    <th class="col-nome">Nome</th>
+                    <th class="col-livro">Livro</th> <!-- Nova coluna "Livro" -->
+                    <th class="col-turma">Turma</th>
+                    <th class="col-serie">Série</th>
+                    <th class="col-edicao">Devolver</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-body">
+                <!-- Conteúdo gerado pelo JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+        <!-- Card de Edição -->
+        <div id="edit-card" class="edit-card">
+            <div class="edit-card-content">
+                <span class="icone-fechar" onclick="fecharCard()">&#10006;</span>
+                <h2>Devolver livro</h2>
+                <form id="edit-form">
+                    <!-- Removi os campos de entrada de dados -->
+                    <div class="buttons-confirmar-cancelar">
+                        <button type="button" class="btn-salvar" onclick="salvarEdicoes()">Confirmar devolução</button>
+                        <button type="button" class="btn-cancelar" onclick="fecharCard()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+        <script src="java.js"></script>
+    </body>
+
+    </html>

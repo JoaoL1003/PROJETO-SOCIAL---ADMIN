@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="IMGS/Icons/LOGO ESTANTE (V).png" />
+    <title>Estante Viva - Aba Empréstimos</title>
+
+    <!--Maitree-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Kanit-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  
+            <!-- BARRA DE NAVEGAÇÃO LATERAL -->
+    <div class="barra_lateral">
+        
+        <!-- Logo centralizada -->
+        <div class="logo-container">
+          <a href="../Pagina inicial - Alunos/index.html">
+            <img src="IMGS/Estrutura/LOGO ESTANTE (B).png" alt="Logo" class="logo">
+          </a>
+        </div>
+
+        <!-- Lista de itens do menu -->
+        <ul>
+            <li class="list active">
+                <a href="../Pagina inicial - Alunos/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/01-Alunos.png" class="menu-icon" data-hover="IMGS/Icons/01-AlunosHover.png" data-default="IMGS/Icons/01-Alunos.png">
+                    </span>
+                    <span class="title">Alunos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/02-Emprestimos.png" class="menu-icon" data-hover="IMGS/Icons/02-EmprestimosHover.png" data-default="IMGS/Icons/02-Emprestimos.png">
+                    </span>
+                    <span class="title">Empréstimos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Devoluções/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/03-Devoluções.png" class="menu-icon" data-hover="IMGS/Icons/03-DevoluçõesHover.png" data-default="IMGS/Icons/03-Devoluções.png">
+                    </span>
+                    <span class="title">Devoluções</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Acervo/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/04-Acervo.png" class="menu-icon" data-hover="IMGS/Icons/04-AcervoHover.png" data-default="IMGS/Icons/04-Acervo.png">
+                    </span>
+                    <span class="title">Acervo</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Cadastro/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/05-Cadastro.png" class="menu-icon" data-hover="IMGS/Icons/05-CadastroHover.png" data-default="IMGS/Icons/05-Cadastro.png">
+                    </span>
+                    <span class="title">Cadastro</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <img src="IMGS/Icons/06-AdminSite.png" class="menu-icon" data-hover="IMGS/Icons/06-AdminSiteHover.png" data-default="IMGS/Icons/06-AdminSite.png">
+                    </span>
+                    <span class="title">Site Alunos</span>
+                </a>
+            </li>
+        </ul>
+    </div> 
+    
+    <!--Sessão Princiapal-->
+  <section class="conteudo_principal">
+
+  <h1 class="title-main-page">Empréstimos</h1>
+
+  <!-- Barra de Pesquisa -->
+  <div class="filtros-de-busca">
+    <div class="barra-de-pesquisa">
+      <img class="input-icon" src="IMGS/Icons/lupa.png" alt="pesquisa-icon" />
+      <input type="text" id="filtro" placeholder="Pesquisar" oninput="filtrarLivros()" />
+    </div>
+  </div>
+
+    <br><!-- Tabela -->
+  <div class="tabela-container">
+    <table id="tabela-livros">
+      <thead>
+        <tr>
+          <th class="col-nome">Nome do Livro</th>
+          <th class="col-turma">Autor</th>
+          <th class="col-serie">Status</th>
+          <th class="col-edicao">Exemplar</th>
+          <th class="col-edicao">Ações</th>
+          <th class="col-edicao">Sobre</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal Confirmação -->
+  <div id="modal-confirmacao" class="modal-confirmacao">
+    <div class="modal-confirmacao-content">
+      <span class="icone-fechar" onclick="fecharConfirmacao()">&#10006;</span>
+      <h2>Confirmação</h2>
+      <p id="mensagem-confirmacao"></p>
+      <button class="btn-salvar-confirm" onclick="fecharConfirmacao()">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Modal Informações do Livro -->
+  <div id="sobre-card" class="edit-card-info">
+    <div class="edit-card-content-info">
+      <span class="icone-fechar" onclick="fecharSobre()">&#10006;</span>
+      <h2>Informações do Livro</h2>
+      <p id="mensagem-sobre"></p>
+    </div>
+  </div>
+
+  <!-- Modal Empréstimo -->
+  <div id="edit-card" class="edit-card-EMPRESTIMO" style="display:none;">
+    <div class="edit-card-content-EMPRESTIMO">
+      <span class="icone-fechar" onclick="fecharCard()">&#10006;</span>
+      <h2>Selecionar Aluno</h2>
+      <div class="barra-de-pesquisa-EMPRESTIMO">
+      <img class="input-icon" src="IMGS/Icons/lupa.png" alt="pesquisa-icon" />
+      <input
+        type="text"
+        id="input-aluno"
+        placeholder="Digite o nome do aluno..."
+        autocomplete="off"
+      />
+      </div>
+      <ul id="lista-sugestoes" class="lista-sugestoes"></ul>
+      <div class="botoes-modal">
+        <button id="btn-confirmar" onclick="confirmarEmprestimo()" disabled>Confirmar</button>
+        <button onclick="fecharCard()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Renovação -->
+  <div id="renovacao-card" class="edit-card-RENOVAR" style="display:none;">
+    <div class="edit-card-content-RENOVAR">
+      <span class="icone-fechar" onclick="fecharRenovacao()">&#10006;</span>
+      <h2>Renovar Empréstimo</h2>
+      <p id="info-renovacao"></p>
+      <div class="botoes-modal">
+        <button id="btn-confirmar-renovacao" onclick="confirmarRenovacao()">Confirmar</button>
+        <button onclick="fecharRenovacao()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+  <script src="script.js"></script>
+</body>
+</html>

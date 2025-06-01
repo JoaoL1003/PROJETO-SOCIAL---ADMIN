@@ -1,0 +1,389 @@
+*{
+    font-family:"Kanit";
+    margin: 0;
+    padding:0;
+}
+.title-main-page {
+    color: #015B30;
+    padding-top: 30px;
+    font-size: 50px;
+    margin: 10px;
+    font-family:"Kanit", sans-serif;
+}
+body{
+    display:flex;
+}
+.conteudo_principal{
+    flex: 1;
+    padding: 20px;
+}
+
+/* ========================================== */
+/* Barra Lateral - estrutura e expansão */
+/* ========================================== */
+.barra_lateral {
+    display: flex;
+    position: relative;
+    height: 100vh !important;
+    width: 60px;
+    background: url(IMGS/Estrutura/bars.png) center/cover no-repeat;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.barra_lateral:hover {
+    width: 200px;
+}
+
+/* ========================================== */
+/* Logo */
+/* ========================================== */
+.logo-container {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 40px;
+    padding-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.barra_lateral:hover .logo {
+    transform: scale(3.0);
+}
+
+/* ========================================== */
+/* Lista de Itens */
+/* ========================================== */
+.barra_lateral ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 250px;
+}
+
+.barra_lateral ul li {
+    list-style: none;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.barra_lateral ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    border-radius: 35px 0 0 35px;
+}
+
+/* Ícones */
+.barra_lateral ul li a .icon {
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+/* Título dos itens */
+.barra_lateral ul li a .title {
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Efeitos de hover */
+.barra_lateral ul li:hover {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+.barra_lateral ul li a:hover {
+    color: #00b156;
+}
+
+/* Ícones antigos desativados */
+.barra_lateral ul li a .icon i {
+    display: none;
+}
+
+/* Ícones fixados ao passar o mouse */
+.barra_lateral ul li.hover-lock {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+
+.barra_lateral ul li.hover-lock a {
+    color: #00b156;
+}
+
+.barra_lateral ul li.hover-lock img.menu-icon {
+    content: attr(data-hover);
+}
+
+/* =============================
+   Card de Edição (Modal)
+============================= */
+.edit-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.edit-card-content {
+    background-image: url(IMGS/fundo-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-card h2 {
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+.edit-card label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.edit-card input,
+.edit-card select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #C5C4C4;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.edit-card input {
+    width: 283px;
+}
+
+.edit-card select {
+    width: 18%;
+    background-color: white;
+}
+
+/* Botões dentro do Card de Edição */
+.buttons-confirmar-cancelar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Botão Salvar */
+.btn-salvar {
+    background: linear-gradient(90deg, rgba(0, 166, 48, 1) 0%, rgba(0, 113, 69, 1) 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-salvar:hover {
+    background: linear-gradient(90deg, rgb(1, 108, 31) 0%, rgb(1, 75, 47) 100%);
+}
+
+/* Botão Cancelar */
+.btn-cancelar {
+    background: linear-gradient(90deg, rgba(253, 148, 0, 1) 0%, rgba(255, 51, 0, 1) 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover {
+    background: linear-gradient(90deg, rgb(195, 114, 0) 0%, rgb(190, 40, 3) 100%);
+}
+
+/* Ícone para Fechar o Card */
+.icone-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.icone-fechar:hover {
+    color: rgb(63, 62, 62);
+}
+
+/* Ícone de edição */
+.edit-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+    opacity: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.edit-icon:hover {
+    opacity: 70%;
+}
+
+/* =============================
+   Tabela e Filtros
+============================= */
+
+/* Container com filtros */
+.filtros-de-busca {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Barra de Pesquisa */
+.barra-de-pesquisa {
+    position: relative;
+    width: 60vh;
+    margin-bottom: 15px;
+}
+
+.barra-de-pesquisa img.input-icon {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+}
+
+.barra-de-pesquisa input[type="text"] {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #C5C4C4;
+    border-radius: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Filtro de turma */
+.filtro-turma {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.filtro-turma select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #C5C4C4;
+    border: 2px solid #C5C4C4;
+    text-align: center;
+    color: #545454;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#filtro::placeholder {
+    color: #C5C4C4;
+}
+
+/* Container da tabela */
+.tabela-container {
+    max-height: 700px; /* <-- Aqui está a altura máxima da tabela visível */
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    table-layout: fixed;
+}
+
+thead tr th {
+    background-color: #c3c2c2;
+    color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    text-align: center; /* Centraliza o cabeçalho */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center; /* Centraliza os dados das células */
+    border: 3px solid #F1F1F1;
+    background: #e3e1e1;
+}
+
+td:last-child {
+    width: 120px;
+}
+
+tr:hover {
+    background-color: #F1F1F1;
+}
+
+/* =============================
+   Colunas Específicas
+============================= */
+.col-nome {
+    width: 30%;
+}
+
+.col-livro {
+    width: 30%; /* Nova coluna "Livro" */
+}
+
+.col-turma {
+    width: 20%;
+}
+
+.col-serie {
+    width: 10%;
+}
+
+.col-edicao {
+    width: 10%;
+    text-align: center;
+}

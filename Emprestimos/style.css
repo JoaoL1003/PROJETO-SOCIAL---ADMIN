@@ -1,0 +1,536 @@
+
+/* =========================
+   ESTILOS GERAIS
+   ========================= */
+* {
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+}
+
+.conteudo_principal{
+    flex: 1;
+    padding: 20px;
+}
+.title-main-page {
+    color: #015B30;
+    font-size: 50px;
+    text-align: left;
+    font-family:"Kanit", sans-serif;
+}
+
+/* ========================================== */
+/* Barra Lateral - estrutura e expansão */
+/* ========================================== */
+.barra_lateral {
+    display: flex;
+    position: relative;
+    height: 120vh !important;
+    width: 60px;
+    background: url(IMGS/Estrutura/bars.png) center/cover no-repeat;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.barra_lateral:hover {
+    width: 200px;
+}
+
+/* ========================================== */
+/* Logo */
+/* ========================================== */
+.logo-container {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 40px;
+    padding-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.barra_lateral:hover .logo {
+    transform: scale(3.0);
+}
+
+/* ========================================== */
+/* Lista de Itens */
+/* ========================================== */
+.barra_lateral ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 250px;
+}
+
+.barra_lateral ul li {
+    list-style: none;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.barra_lateral ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    border-radius: 35px 0 0 35px;
+}
+
+/* Ícones */
+.barra_lateral ul li a .icon {
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+/* Título dos itens */
+.barra_lateral ul li a .title {
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Efeitos de hover */
+.barra_lateral ul li:hover {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+.barra_lateral ul li a:hover {
+    color: #00b156;
+}
+
+/* Ícones antigos desativados */
+.barra_lateral ul li a .icon i {
+    display: none;
+}
+
+/* Ícones fixados ao passar o mouse */
+.barra_lateral ul li.hover-lock {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+
+.barra_lateral ul li.hover-lock a {
+    color: #00b156;
+}
+
+.barra_lateral ul li.hover-lock img.menu-icon {
+    content: attr(data-hover);
+}
+
+/* =========================
+   TABELA DE LIVROS
+   ========================= */
+.tabela-container {
+    max-height: 700px;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+thead tr th {
+    background-color: #c3c2c2;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 15px;
+    text-align: center;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 3px solid #F1F1F1;
+    background: #e3e1e1;
+}
+
+td {
+    background-color: #fff;
+}
+
+/* ==== ESTILIZAÇÃO POR COLUNA ==== */
+/* Coluna 3 (ex: Status ou outro campo específico) */
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(5) {
+    background-color: #c3c2c2;
+    color: #000000;
+    font-weight: bold;
+}
+
+td:nth-child(3) {
+    background-color: #ffffff;
+    width: 135px;
+    font-weight: 600;
+    text-align: center;
+}
+
+td:nth-child(4),
+td:nth-child(5),
+td:nth-child(6) {
+    background-color: #ffffff;
+    width: 30px;
+}
+
+/* =========================
+   ÍCONES DA TABELA
+   ========================= */
+.edit-icon,
+.edit-icon-SOBRE,
+.edit-icon-RENOVAR {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    vertical-align: middle;
+}
+
+.edit-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.edit-icon:hover,
+.edit-icon-SOBRE:hover,
+.edit-icon-RENOVAR:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* =========================
+   BARRA DE PESQUISA
+   ========================= */
+.barra-de-pesquisa {
+    position: relative;
+    width: 30%;
+}
+
+.barra-de-pesquisa img.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+.barra-de-pesquisa input[type="text"] {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 2px solid #d1d1d1;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.barra-de-pesquisa input[type="text"]:focus {
+    border-color: #015B30;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(1, 91, 48, 0.1);
+}
+/* =========================
+   MODAIS (EDITAR, CONFIRMAR, INFO)
+   ========================= */
+.edit-card,
+.modal-confirmacao,
+.edit-card-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.edit-card-content,
+.modal-confirmacao-content,
+.edit-card-content-info {
+    background-image: url(IMGS/Fundos/fundo-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 27px;
+    border-radius: 15px;
+    width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+#renovacao-card .edit-card-content {
+    text-align: left;
+}
+
+#info-renovacao {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+/* =========================
+   MODAIS (EMPRÉSTIMOS)
+   ========================= */
+.edit-card-EMPRESTIMO{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.edit-card-content-EMPRESTIMO{
+    background-image: url(IMGS/Fundos/fundo-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 27px;
+    border-radius: 15px;
+    width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    
+}
+.edit-card-content-EMPRESTIMO h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #0f0f0f;
+}
+.edit-card-content-EMPRESTIMO input[type="text"] {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 3px solid #b8b8b8;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+.barra-de-pesquisa-EMPRESTIMO {
+    position: relative;
+    width: 100%;
+}
+
+.barra-de-pesquisa-EMPRESTIMO img.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+/* =========================
+   LISTA DE SUGESTÕES
+   ========================= */
+.lista-sugestoes {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    list-style: none;
+}
+
+.lista-sugestoes li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.lista-sugestoes li:hover {
+    background-color: #e0e0e0;
+}
+/* =========================
+   MODAIS (renovar)
+   ========================= */
+   .edit-card-RENOVAR{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.edit-card-content-RENOVAR{
+    background-image: url(IMGS/Fundos/fundo-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 27px;
+    border-radius: 15px;
+    width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    
+}
+.edit-card-content-RENOVAR h2{
+    font-size: 30px;
+    margin-bottom: -15px;
+    text-align: left;
+    color: #0f0f0f;
+}
+#info-renovacao{
+    background: transparent;
+    margin: 10px 0; 
+    font-size: 16px; 
+    line-height: 1.6;
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+.botoes-modal {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.botoes-modal button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Botões Verdes */
+#btn-confirmar,
+#btn-confirmar-renovacao,
+.btn-salvar-confirm {
+    background: linear-gradient(90deg, rgba(0, 166, 48, 1) 0%, rgba(0, 113, 69, 1) 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#btn-confirmar:hover,
+#btn-confirmar-renovacao:hover,
+.btn-salvar-confirm:hover {
+    background: linear-gradient(90deg, rgb(1, 108, 31) 0%, rgb(1, 75, 47) 100%);
+}
+
+/* Botão Cinza (cancelar) */
+.botoes-modal button:last-child {
+    background: linear-gradient(90deg, rgba(253, 148, 0, 1) 0%, rgba(255, 51, 0, 1) 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botoes-modal button:last-child:hover {
+    background: linear-gradient(90deg, rgb(195, 114, 0) 0%, rgb(190, 40, 3) 100%);
+}
+
+/* =========================
+   MODAL DE CONFIRMAÇÃO
+   ========================= */
+.modal-confirmacao-content {
+    background-image: url(IMGS/Fundos/fundo-card-confirmar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 27px;
+    border-radius: 15px;
+    width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+.modal-confirmacao-content h2{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+#mensagem-confirmacao {
+    margin: 10px 0;
+    margin-top: -5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #585858;
+    line-height: 1.5;
+}
+
+/* =========================
+   ÍCONE DE FECHAR
+   ========================= */
+.icone-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.2s;
+}
+
+.icone-fechar:hover {
+    color: #d0d0d0;
+}
+
+/* =========================
+   STATUS DOS LIVROS (CORES)
+   ========================= */
+td[style*="background-color: rgba(38, 167, 55, 0.8)"],
+td[style*="background-color: rgba(245, 156, 0, 0.8)"],
+td[style*="background-color: rgba(222, 4, 4, 0.8)"] {
+    color: white !important;
+}
