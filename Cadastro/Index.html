@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="IMGS/LOGO-ESTANTE-(V).png">
+    <title>Cadastro</title>
+
+    <!--Maitree-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Kanit-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+            <!-- BARRA DE NAVEGAÇÃO LATERAL -->
+    <div class="barra_lateral">
+        
+        <!-- Logo centralizada -->
+        <div class="logo-container">
+            <img src="IMGS/Estrutura/LOGO ESTANTE (B).png" alt="Logo" class="logo">
+        </div>
+
+        <!-- Lista de itens do menu -->
+        <ul>
+            <li class="list active">
+                <a href="../Pagina inicial - Alunos/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/01-Alunos.png" class="menu-icon" data-hover="IMGS/Icons/01-AlunosHover.png" data-default="IMGS/Icons/01-Alunos.png">
+                    </span>
+                    <span class="title">Alunos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Emprestimos/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/02-Emprestimos.png" class="menu-icon" data-hover="IMGS/Icons/02-EmprestimosHover.png" data-default="IMGS/Icons/02-Emprestimos.png">
+                    </span>
+                    <span class="title">Empréstimos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Devoluções/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/03-Devoluções.png" class="menu-icon" data-hover="IMGS/Icons/03-DevoluçõesHover.png" data-default="IMGS/Icons/03-Devoluções.png">
+                    </span>
+                    <span class="title">Devoluções</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="../Acervo/index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/04-Acervo.png" class="menu-icon" data-hover="IMGS/Icons/04-AcervoHover.png" data-default="IMGS/Icons/04-Acervo.png">
+                    </span>
+                    <span class="title">Acervo</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="Index.html">
+                    <span class="icon">
+                        <img src="IMGS/Icons/05-Cadastro.png" class="menu-icon" data-hover="IMGS/Icons/05-CadastroHover.png" data-default="IMGS/Icons/05-Cadastro.png">
+                    </span>
+                    <span class="title">Cadastro</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <img src="IMGS/Icons/06-AdminSite.png" class="menu-icon" data-hover="IMGS/Icons/06-AdminSiteHover.png" data-default="IMGS/Icons/06-AdminSite.png">
+                    </span>
+                    <span class="title">Site Alunos</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="section-main">
+
+        <div class="div-title-page">
+            <h1 class="tite-main">Cadastro</h1>
+            <p class="subtitle-main">Selecione o que você irá cadastrar</p>
+        </div>
+
+        <!--Links-->
+        
+            <div class="links-cadastro">
+                
+                <!-- SUB DIV 01-->
+                <div class="sub-div-links-cadastro">
+                    <img src="clip/livro aberto.svg" class="img01-link-redicionamento-alternative">
+                    <img src="clip/livro_aberto_verde.svg" class="img01-link-redicionamento">
+                <input type="button" class="link-redicionamento" value="    Livros" onclick="mostrarCadastro('livros')">
+                </div>
+
+                <!-- SUB DIV 02-->
+                <div class="sub-div-links-cadastro">
+                    <img src="clip/person-fill.svg" class="img02-link-redicionamento-alternative">
+                    <img src="clip/person_fill_verde.svg" class="img02-link-redicionamento">
+                <input type="button" class="link-redicionamento" value="     Pessoa" onclick="mostrarCadastro('individuos')">
+                </div>
+
+                <!-- SUB DIV 03-->
+                <div class="sub-div-links-cadastro">
+                    <img src="clip/folder2.svg" class="img03-link-redicionamento-alternative">
+                    <img src="clip/folder2_verde.svg" class="img03-link-redicionamento">
+                <input type="button" class="link-redicionamento" value="     Dados" onclick="mostrarCadastro('dados')">
+                </div>
+            </div>
+<br><br>
+            <!--Cadastro Livros-->
+            <div id="cadastro-livros" class="cadastro-livros">
+
+            <div class="subdiv-cadastro-livros">
+                <!--Coluna 01-->
+                <div class="column-01">
+
+                <br><!--Nome do livro-->
+                <div>
+                    <h2 class="title-forms"> Título do Livro:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o título do livro" title="Título do livro">
+                </div>
+
+                <!--Autor-->
+                <div>
+                    <h2 class="title-forms"> Autor:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o autor do livro" title="Autor do livro">
+                </div>
+
+                <!--Gênero-->
+                <div>
+                    <h2 class="title-forms"> Gênero:</h2>
+                    <select class="box-text-input" placeholder=" Selecione o gênero do Livro" title="Gênero do livro">
+                        <option value="Gênero">Gênero</option>
+                        <option value="Ficção">Ficção</option>
+                        <option value="Não Ficção">Não Ficção</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Aventura">Aventura</option>
+                    </select>
+                </div>
+
+                <!--Editora-->
+                <div>
+                    <h2 class="title-forms"> Editora:</h2>
+                    <select class="box-text-input" placeholder=" Selecione a editora do livro" title="Editora do livro">
+                        <option value="Editora">Editora</option>
+                        <option value="Editora A">Editora A</option>
+                        <option value="Editora B">Editora B</option>
+                        <option value="Editora C">Editora C</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Coluna 02-->
+            <div class="column-02">
+                <br><!--Exemplar-->
+                <div>
+                    <h2 class="title-forms"> Exemplar:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o exemplar do livro" title="Exemplar do livro">
+                </div>
+
+                <!--Volume-->
+                <div>
+                    <h2 class="title-forms"> Volume:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o Volume do livro" title="Volume do livro">
+                </div>
+
+                <!--Edição-->
+                <div>
+                    <h2 class="title-forms"> Edição:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite a edição do livro" title="Edição do livro">
+                </div>
+
+                <!--Local-->
+                <div>
+                    <h2 class="title-forms"> Local:</h2>
+                    <select class="box-text-input" placeholder=" Selecione o local do livro" title="Local do livro">
+                        <option value="Local">Local</option>
+                        <option value="Local A">Local A</option>
+                        <option value="Local B">Local B</option>
+                        <option value="Local C">Local C</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Coluna 03-->
+            <div class="column-03">
+                <br><!--Código-->
+                <div>
+                    <h2 class="title-forms"> Código:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o código do livro" title="código do livro">
+                </div>
+
+                <!--Mapa-->
+                <div>
+                    <h2 class="title-forms"> Mapa:</h2>
+                    <select class="box-text-input" placeholder=" Selecione o mapa do livro" title="Mapa do livro">
+                        <option value="Mapa">Mapa</option>
+                        <option value="Mapa A">Mapa A</option>
+                        <option value="Mapa B">Mapa B</option>
+                        <option value="Mapa C">Mapa C</option>
+                    </select>
+                </div>
+
+                <!--Ano-->
+                <div>
+                    <h2 class="title-forms"> Ano:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o ano do livro" title="Ano do livro">
+                </div>
+
+            <!--Botão enviar-->
+            <div class="div-button-submit">
+                <button class="button-submit">Cadastrar</button>
+                <button class="button-limpar">Limpar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Cadastro de Pessoas -->          
+    <div id="cadastro-individuos" style="display: none;">
+        <div id="div-tipo-individuo">
+            <label class="label-selection-individuos"><input type="radio" id="radio1" value="aluno" name="tipo" onclick="mostrarFormIndividuo('aluno')"><span class="radio-label"> Aluno </span></label>
+
+            <label class="label-selection-individuos"><input type="radio" id="radio2" value="funcionario" name="tipo" onclick="mostrarFormIndividuo('funcionario')"><span class="radio-label"> Outros  </span> </label>
+    </div>
+    <br>
+
+    <!--Cadastro Alunos-->            
+    <div id="form-aluno" class="form-individuo" style="display: none;">
+        <div class="subdiv-cadastro-individuos">
+            <!-- Nome -->
+        <div>
+            <h3 class="title-forms">Nome do aluno:</h3>
+                <input type="text" placeholder="   Digite aqui o nome do aluno"  class="box-text-input">
+        </div>
+            <!-- Turma -->
+        <div>
+            <h3 class="title-forms">Curso:</h3>
+                <select class="box-text-input">
+                    <option value="M">Curso</option>
+                    <option value="A">Administração</option>
+                    <option value="E">Estética</option>
+                    <option value="F">Finanças</option>
+                    <option value="EN">Enfermagem</option>
+                    <option value="IN">Informática</option>
+                </select>
+        </div>
+        
+            <!-- Série Escolar -->
+        <div>
+            <h3 class="title-forms">Série:</h3>
+                <select class="box-text-input">
+                    <option value="M">Selecione</option>
+                    <option value="1">1º</option>
+                    <option value="2">2º</option>
+                    <option value="3">3º</option>
+                </select>
+        </div>
+
+            <!-- Telefone -->
+        <div>
+            <h3 class="title-forms">Telefone:</h3>
+                <input type="tel" placeholder="   85 999999999"  class="box-text-input ">
+        </div>
+        
+            <!--Botão enviar-->
+            <div class="div-button-submit div-button-submit-alternative-01">
+                <button class="button-submit">Cadastrar</button>
+                <button class="button-limpar">Limpar</button>
+            </div> 
+    </div>
+</div>
+
+    <!--Cadastro Funcionário-->
+    <div id="form-funcionario" class="form-individuo" style="display: none;">
+        <div class="subdiv-cadastro-individuos">
+
+            <!--Nome-->
+        <div>
+            <h3 class="title-forms">Nome do funcionário:</h3>
+                <input type="text" placeholder="   Digite aqui o nome do funcionário"  class="box-text-input">
+        </div>
+
+        <!--Telefone-->
+        <div>
+            <h3 class="title-forms">Telefone</h3>
+                <input type="tel" placeholder="   Digite aqui o telefone"  class="box-text-input">
+        </div>
+
+        <!--Função-->
+        <div>
+            <h3 class="title-forms">Função</h3>
+                <input type="tel" placeholder="   Digite aqui sua função"  class="box-text-input">
+        </div>
+
+            <!--Botão enviar-->
+            <div class="div-button-submit div-button-submit-alternative-02">
+                <button class="button-submit">Cadastrar</button>
+                <button class="button-limpar">Limpar</button>
+            </div> 
+    </div>
+</div>
+</div>
+
+            <!--Cadastro de Dados-->
+    <div id="cadastro-dados" style="display: none;">
+        <div id="div-tipo-individuo">
+            <label class="label-selection-individuos"><input type="radio" id="radio1" value="gerais" name="geral" onclick="mostrarFormDados('dados_gerais')"><span class="radio-label"> Dados Gerais </span></label>
+
+            <label class="label-selection-individuos"><input type="radio" id="radio2" value="cursos" name="geral" onclick="mostrarFormDados('cursos')"><span class="radio-label"> Cursos  </span> </label>
+        </div>
+
+            <div id="form-dados_gerais" class="cadastro-dados" style="display: none;">
+                <div class="subdiv-cadastro-geral">
+                    <!--Autores-->
+                    <div>
+                    <h2 class="title-forms">Autor(res):</h2>
+                     <select class="box-text-input" placeholder=" Selecione o autor do livro" title="Autor">
+                        <option value="Autor">Autor</option>
+                        <option value="Autor A">Autor A</option>
+                        <option value="Autor B">Autor B</option>
+                        <option value="Autor C">Autor C</option>
+                    </select>
+                </div>
+
+                <!--Mapa-->
+                <div>
+                    <h2 class="title-forms">Mapa:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o título do livro" title="Título do livro">
+                </div>
+
+                <!--Gênero-->
+                <div>
+                    <h2 class="title-forms">Gênero:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o título do livro" title="Título do livro">
+                </div>
+
+                <!--Editora-->
+                <div>
+                    <h2 class="title-forms">Editora:</h2>
+                    <input type="text" class="box-text-input" placeholder=" Digite o título do livro" title="Título do livro">
+                </div>
+
+                    <!--Botões-->
+                <div class="div-button-submit">
+                    <button class="button-submit">Cadastrar</button>
+                    <button class="button-deletar">Deletar</button>
+                    <button class="button-limpar">Limpar</button>
+                </div>
+            </div>
+            </div>
+
+            <!-- Cadastro Curso -->
+             <div id="form-cursos" class="cadastro-dados" style="display: none;">
+                <div class="subdiv-cadastro-curso">
+                    <!--Nome do curso-->
+                    <div>
+                        <h2 class="title-forms">Nome do curso:</h2>
+                        <input type="text" class="box-text-input" placeholder=" Digite o nome do curso" title="Nome do curso">
+                    </div>
+
+                    <!--Botões-->
+                    <div class="div-button-submit">
+                        <button class="button-submit">Cadastrar</button>
+                        <button class="button-limpar">Limpar</button>
+                    </div>
+                </div>
+             </div>
+    </div>
+
+        <!-- Caixas de texto botões -->
+</section>
+    <script src="main.js"></script>
+</body>
+</html>

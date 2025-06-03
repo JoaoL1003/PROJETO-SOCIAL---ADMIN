@@ -1,0 +1,359 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.tite-main{
+    color:#01530b;
+    font-family:"Kanit", sans-serif;
+    font-weight:500;
+    font-size:5rem;
+}
+.subtitle-main{
+    color:#01530b;
+    font-family:"Kanit", sans-serif;
+    font-weight:normal;
+    font-size:1.6rem;
+    margin-top:-1.2rem;
+}
+.links-cadastro{
+    display:flex;
+    gap:2rem;
+}
+.title-forms{
+    font-family:"Kanit", sans-serif;
+    font-weight:normal;
+    font-size:1.4rem;
+    color:#01530b;
+}
+body{
+    display:flex;
+}
+.section-main{
+    flex: 1;
+    padding: 10px;
+}
+
+/* ========================================== */
+/* Barra Lateral - estrutura e expansão */
+/* ========================================== */
+.barra_lateral {
+    display: flex;
+    position: relative;
+    height: 100vh !important;
+    width: 60px;
+    background: url(IMGS/Estrutura/bars.png) center/cover no-repeat;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    font-family:"Kanit", sans-serif;
+}
+
+.barra_lateral:hover {
+    width: 200px;
+}
+
+/* ========================================== */
+/* Logo */
+/* ========================================== */
+.logo-container {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 40px;
+    padding-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.barra_lateral:hover .logo {
+    transform: scale(3.0);
+}
+
+/* ========================================== */
+/* Lista de Itens */
+/* ========================================== */
+.barra_lateral ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 250px;
+}
+
+.barra_lateral ul li {
+    list-style: none;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.barra_lateral ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    border-radius: 35px 0 0 35px;
+}
+
+/* Ícones */
+.barra_lateral ul li a .icon {
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+/* Título dos itens */
+.barra_lateral ul li a .title {
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Efeitos de hover */
+.barra_lateral ul li:hover {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+.barra_lateral ul li a:hover {
+    color: #00b156;
+}
+
+/* Ícones antigos desativados */
+.barra_lateral ul li a .icon i {
+    display: none;
+}
+
+/* Ícones fixados ao passar o mouse */
+.barra_lateral ul li.hover-lock {
+    background: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+
+.barra_lateral ul li.hover-lock a {
+    color: #00b156;
+}
+
+.barra_lateral ul li.hover-lock img.menu-icon {
+    content: attr(data-hover);
+}
+
+/*Botões livros e individuos*/
+
+.link-redicionamento{
+    height:3.5rem;
+    width:13rem;
+    background-color:rgb(255, 255, 255);
+    border:3px solid #00bf63;
+    color:#00bf63;
+    border-radius:1rem;
+    font-size:1.5rem;
+    font-family:"Kanit";
+    font-weight: normal;
+    transition:300ms;
+}
+.link-redicionamento{
+    display: flex; /* Para alinhar a imagem e o texto horizontalmente */
+    align-items: center; /* Para alinhar verticalmente ao centro */
+    justify-content:center;
+}
+.sub-div-links-cadastro{
+    height:5rem;
+    width:13.5rem;
+}
+.img01-link-redicionamento{
+    position:relative;
+    top:3.5rem;
+    left:0.7rem;
+    height:50px;
+    width:50px;
+}
+.img01-link-redicionamento-alternative{
+    position:relative;
+    top:3.5rem;
+    left:0.7rem;
+    height:50px;
+    width:50px;
+}
+.img02-link-redicionamento{
+    position:relative;
+    top:3.5rem;
+    left:0.7rem;
+    height:50px;
+    width:50px;
+}
+.img02-link-redicionamento-alternative{
+    position:relative;
+    top:3.5rem;
+    left:0.7rem;
+    height:50px;
+    width:50px;
+}
+.img03-link-redicionamento{
+    position:relative;
+    top:3.5rem;
+    left:0.6rem;
+    height:50px;
+    width:50px;
+}
+.img03-link-redicionamento-alternative{
+    position:relative;
+    top:3.5rem;
+    left:0.6rem;
+    height:50px;
+    width:50px;
+}
+.img03-link-redicionamento-alternative, .img02-link-redicionamento-alternative, .img01-link-redicionamento-alternative{
+    display:none;
+}
+.link-redicionamento.ativo{
+    background:#00bf63;
+    color:rgb(255, 255, 255);
+}
+.link-redicionamento:focus{
+    outline: none;
+}
+
+/*cadastro livros*/
+.label-selection-individuos{
+    font-family:"Kanit", sans-serif;
+    font-weight:normal;
+    font-size:1rem;
+    color:#01530b;
+}
+#div-tipo-individuo{
+    display:flex;
+    gap:1rem;
+    margin-left:0.2rem;
+}
+.cadastro-livros{
+    border:1px solid #d9d9d9;
+    border-radius:1rem;
+    width:72rem;
+    height:17.5rem;
+    margin-left:0;
+}
+.subdiv-cadastro-livros{
+    display:flex;
+    gap:6rem;
+}
+.box-text-input{
+    width:19rem;
+    height:1.8rem;
+    background:rgb(216, 216, 216);
+    border:none;
+    border-radius:1rem;
+    font-family:"Kanit", sans-serif;
+    font-weight:normal;
+}
+.box-text-input:focus{
+    outline:none;
+}
+.column-01{
+    margin-left:10px;
+}
+
+/*Cadastro Alunos*/
+.form-individuo{
+    width:50vw;
+    height:13.2rem;
+    border:1px solid #d9d9d9;
+    border-radius:1rem;
+    margin-left:1rem;
+}
+.form-individuo div{
+    margin-left:0.2rem;
+}
+.subdiv-cadastro-individuos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+}
+
+/* Gerenciamento de dados*/
+.cadastro-dados{
+    margin-left:1rem;
+    margin-top:0.5rem;
+}
+.subdiv-cadastro-geral{
+    display:flex;
+    flex-wrap:wrap;
+    width:50vw;
+    height:15em;
+    border:2px solid #d9d9d9;
+    border-radius:1rem;
+}
+.subdiv-cadastro-geral div{
+    margin-left:0.5rem;
+}
+.subdiv-cadastro-curso{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    width:25vw;
+    height:11em;
+    border:2px solid #d9d9d9;
+    border-radius:1rem;
+}
+.subdiv-cadastro-curso div{
+    margin-left:0.5rem;
+}
+/* BUTÕES SALVAR E LIMPAR */
+
+.div-button-submit{
+    display:flex;
+    gap:1rem;
+    position:relative;
+    top: 1.3rem;
+}
+.button-submit{
+    height:2.8rem;
+    width:9rem;
+    border:none ;
+    background: #00bf63;
+    color:#ffffff;
+    border-radius:2rem;
+    font-size:1.2rem;
+    font-family:"Kanit", sans-serif;
+    font-weight: 500;
+    transition:300ms;
+}
+.button-limpar{
+    height:2.8rem;
+    width:9rem;
+    border:none ;
+    background: #ff914d;
+    color:#ffffff;
+    border-radius:2rem;
+    font-size:1.2rem;
+    font-family:"Kanit", sans-serif;
+    font-weight: 500;
+    transition:300ms;
+}
+.button-deletar{
+    height:2.8rem;
+    width:9rem;
+    border:none ;
+    background: #ff4d4d;
+    color:#ffffff;
+    border-radius:2rem;
+    font-size:1.2rem;
+    font-family:"Kanit", sans-serif;
+    font-weight: 500;
+    transition:300ms;
+}
