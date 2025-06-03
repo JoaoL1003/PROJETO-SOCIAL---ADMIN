@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="IMGS/LOGO ESTANTE (V).png">
+    <title>Estante Viva</title>
+
+    
+    <!--Maitree-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Kanit-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- Barra lateral com o menu -->
+            <div class="barra_lateral">
+                
+                <!-- Contêiner da logo dentro da barra lateral -->
+                <div class="logo-container">
+                    <!-- Logo da ESTANTE VIVA -->
+                    <img src="IMGS/LOGO V-PROT.png" alt="Logo" class="logo">
+                </div>
+
+                <!-- Lista de itens do menu -->
+                <ul>
+                    <!-- Item de menu "Alunos" com ícone e título -->
+                    <li class="list active">
+                        <a href="../Pagina inicial - Alunos/index.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="title">Alunos</span>
+                        </a>
+                    </li>
+                    
+                    <!-- Item de menu "Empréstimos" com ícone e título -->
+                    <li class="list">
+                        <a href="../Emprestimos/index.html">
+                            <span class="icon"><i class="fa-solid fa-book"></i></span>
+                            <span class="title">Empréstimos</span>
+                        </a>
+                    </li>
+
+                    <!-- Item de menu "Devoluções" com ícone e título -->
+                    <li class="list">
+                        <a href="../Devoluções/index.html">
+                            <span class="icon"><i class="fa-solid fa-backward"></i></span>
+                            <span class="title">Devoluções</span>
+                        </a>
+                    </li>
+
+                    <!-- Item de menu "Acervo" com ícone e título -->
+                    <li class="list">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-book-open"></i></span>
+                            <span class="title">Acervo</span>
+                        </a>
+                    </li>
+
+                    <!-- Item de menu "Cadastro" com ícone e título -->
+                    <li class="list">
+                        <a href="../Cadastro/Index.html">
+                            <span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>
+                            <span class="title">Cadastro</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Inclusão do FontAwesome para os ícones -->
+            <script src="https://kit.fontawesome.com/a31c86b042.js" crossorigin="anonymous"></script>
+
+
+            <!-- TABELA -->
+
+            <div class="conteudo_principal">
+
+            <h1>Acervo</h1>
+
+            <div class="filtros-de-busca">
+                <div class="filtros-de-busca">
+                    <div class="barra-de-pesquisa">
+                        <img class="input-icon" src="IMGS/lupa.png" alt="pesquisa-icon">
+                        <input type="text" id="filtro" placeholder="Pesquisar" oninput="filtrarLivros()">
+                    </div>
+
+                    <div class="filtro-turma">
+                        <select id="filtroGenero" onchange="filtrarLivros()">
+                            <option value="">GÊNEROS</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Distopia">Distopia</option>
+                            <option value="Clássico">Clássico</option>
+                            <option value="Drama">Drama</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabela-container">
+            <table id="tabela-alunos">
+                <thead>
+                    <tr>
+                        <th class="col-nome">Nome do livro</th>
+                        <th class="col-genero">Gênero</th>
+                        <th class="col-autor">Autor</th>
+                        <th class="col-alugado">Alugado</th>
+                        <th class="col-edicao">Edição</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-body">
+                    <!-- Conteúdo gerado pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+            <!-- Card de Edição -->
+            <div id="edit-card" class="edit-card">
+                <div class="edit-card-content">
+                    <span class="icone-fechar" onclick="fecharCard()">&#10006;</span>
+                    <h2>Editar Livro</h2>
+                    <form id="edit-form">
+                        <label for="edit-nome">Nome:</label>
+                        <input type="text" id="edit-nome" placeholder="Nome do livro">
+
+                        <label for="edit-genero">Gênero:</label>
+                        <input type="text" id="edit-genero" placeholder="Gênero">
+
+                        <label for="edit-autor">Autor:</label>
+                        <input type="text" id="edit-autor" placeholder="Autor">
+
+                        <div class="buttons-confirmar-cancelar">
+                            <button type="button" class="btn-salvar" onclick="salvarEdicoes()">Salvar Alterações</button>
+                            <button type="button" class="btn-cancelar" onclick="fecharCard()">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+    </div>        
+
+    <script src="java.js"></script>
+</body>
+
+</html>
